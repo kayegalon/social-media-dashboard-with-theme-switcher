@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+	--colors-primary-lime-green: 163, 72%, 41%;
+	--colors-primary-bright-red: 356, 69%, 56%;
+	--colors-primary-facebook: 208, 92%, 53%;
+	--colors-primary-twitter: 203, 89%, 53%;
+	--colors-primary-instagram-gradient-from: 37, 97%, 70%;
+	--colors-primary-instagram-gradient-to: 329, 70%, 58%;
+	--colors-primary-youtube: 348, 97%, 39%;
+	--toggle-dark-theme-gradient-from: 210, 78%, 56%;
+	--toggle-dark-theme-gradient-to: 146, 68%, 55%;
+	--toggle-light-theme: 230, 22%, 74%;
+	--dark-theme-background: 230, 17%, 14%;
+	--dark-theme-background-pattern: 232, 19%, 15%;
+	--dark-theme-card-background: 228, 28%, 20%;
+	--dark-theme-text-blue: 228, 34%, 66%;
+	--dark-theme-text-white: 0, 0%, 100%;
+	--light-theme-background: 0, 0%, 100%;
+	--light-theme-background-pattern: 225, 100%, 98%;
+	--light-theme-card-background: 227, 47%, 96%;
+	--light-theme-text-blue: 228, 12%, 44%;
+	--light-theme-text-blue-dark: 230, 17%, 14%;
+	--font-size-card-headings: 14px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter', sans-serif;
+	background-color: hsl(var(--light-theme-background));
+	color: hsl(var(--light-theme-text-blue));
+	font-weight: 700;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.background-pattern {
+	z-index: -1;
+	width: 100%;
+	height: 15rem;
+	background: hsl(var(--light-theme-background-pattern));
+	border: 1px solid hsl(var(--light-theme-background-pattern));
+	border-radius: 0 0 15px 15px;
+}
+
+.dashboard {
+	z-index: 1;
+	margin-top: -15rem;
+	padding: 2rem 5rem;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+hr {
+	display: none;
+}
+
+h1, h3 {
+	color: hsl(var(--light-theme-text-blue-dark));
+}
+
+.headings {
+	line-height: .5rem;
+}
+
+.toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+/* TOGGLE BUTTON */
+.toggle-switch {
+	position: relative;
+	width: 50px;
+	height: 24px;
+	margin-left: .5rem;
+	border-radius: 100px;
+	background-color: hsl(var(--toggle-light-theme));
+	cursor: pointer;
+}
+
+.toggle-switch:before {
+	content: "";
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: white;
+	left: 2px;
+	top: 2px;
+}
+
+/* TOGGLE BUTTON */
+
+.main-tiles, .sub-tiles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.main {
+	border: 1px solid hsl(var(--light-theme-card-background));
+	background-color: hsl(var(--light-theme-card-background));
+	width: 17rem;
+	height: 15rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 3rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 5px;
+}
+
+.main.facebook {
+	border-top: 5px solid hsl(var(--colors-primary-facebook));
+}
+
+.main.twitter {
+	border-top: 5px solid hsl(var(--colors-primary-twitter));
+}
+
+.main.instagram {
+	border-top: 5px solid;
+	border-image: linear-gradient(to right, hsl(var(--colors-primary-instagram-gradient-from)), hsl(var(--colors-primary-instagram-gradient-to))) 1 0 0 0;
+}
+
+.main.youtube {
+	border-top: 5px solid hsl(var(--colors-primary-youtube));
+}
+
+.main .profile, .main .stats {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.main > .followers > .number {
+	font-size: 60px;
+	color: hsl(var(--light-theme-text-blue-dark));
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.main > .followers > .label {
+	letter-spacing: .5rem;
+}
+
+.main > .profile > .icon {
+	margin-right: .5rem;
+}
+
+.today.green {
+	color: hsl(var(--colors-primary-lime-green));
+}
+
+.today.red {
+	color: hsl(var(--colors-primary-bright-red));
+}
+
+.sub {
+	border: 1px solid hsl(var(--light-theme-card-background));
+	background-color: hsl(var(--light-theme-card-background));
+	width: 17rem;
+	height: 7rem;
+	margin-bottom: 1rem;
+	padding: .5rem;
+	border-radius: 5px;
+}
+
+.sub .card-heading, .sub .stats {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sub > .stats > .today {
+	display: flex;
+	align-items: center;
+	margin-top: 0;
+}
+
+.sub > .stats > .number {
+	font-size: 2rem;
+	margin-top: 0;
+	color: hsl(var(--light-theme-text-blue-dark));
+}
+
+.main:hover, .sub:hover {
+	cursor: pointer;
+	background-color: hsl(228, 0%, 90%);
+}
+
+/* DARK MODE */
+body.dark, .toggle-switch.dark:before {
+	background-color: hsl(var(--dark-theme-background));
+	color: hsl(var(--dark-theme-text-blue));
+}
+
+.background-pattern.dark {
+	background-color: hsl(var(--dark-theme-background-pattern));
+	border: 1px solid hsl(var(--dark-theme-background-pattern));
+}
+
+.toggle-switch.dark:before {
+	left: calc(100% - 20px - 2px);
+}
+
+h1.dark, h3.dark, .main > .followers > .number.dark, .sub > .stats > .number.dark {
+	color: hsl(var(--dark-theme-text-white));
+}
+
+.main.dark, .sub.dark {
+	background-color: hsl(var(--dark-theme-card-background));
+	border-left: 1px solid hsl(var(--dark-theme-card-background));
+	border-right: 1px solid hsl(var(--dark-theme-card-background));
+	border-bottom: 1px solid hsl(var(--dark-theme-card-background));
+}
+
+.sub.dark {
+	border-top: 1px solid hsl(var(--dark-theme-card-background));
+}
+
+.main.dark:hover, .sub.dark:hover {
+	cursor: pointer;
+	background-color: hsl(228, 20%, 30%);
+}
+
+.toggle-switch.active {
+	background-image: linear-gradient(to right, hsl(var(--toggle-dark-theme-gradient-from)), hsl(var(--toggle-dark-theme-gradient-to)));
+}
+/* DARK MODE */
+
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+	.dashboard {
+		padding: 1rem 1.5rem;
+	}
+	
+	.header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	hr {
+		display: block;
+		width: 100%;
+		border: 1px solid hsl(var(--toggle-light-theme));
+	}
+	
+	hr.dark {
+		border: 1px solid hsl(var(--dark-theme-card-background));
+	}
+	
+	.toggle {
+		width: 100%;
+		justify-content: space-between;
+	}
+	
+	.main, .sub {
+		width: 100%;
+	}
+	
+	.sub {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
