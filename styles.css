@@ -257,6 +257,10 @@ h1.dark, h3.dark, .main > .followers > .number.dark, .sub > .stats > .number.dar
 		align-items: flex-start;
 	}
 	
+	h1 {
+		font-size: 20px;
+	}
+	
 	hr {
 		display: block;
 		width: 100%;
