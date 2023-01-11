@@ -1,10 +1,3 @@
-/* TO-DO :
--media query styling
--complete design requirements
--study code, note some important stuff to remember
--clean up code
--proceed to bts magazine and another challenge */
-
 /*dark mode toggle*/
 const body = document.querySelector("body");
 const bgpattern = document.querySelector(".background-pattern");
